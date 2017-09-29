@@ -28,22 +28,27 @@ public class Assignment3 {
         Integer[] b = {1, 3, 4, 6, 8, 9, 10, 11};
         Set<Integer> sa = new Set(a);
         Set<Integer> sb = new Set(b);
-
-        System.out.println("Union");
+        Set<Integer> sc = new Set(true);
+        
+        System.out.println("\nUnion");
         union.SetUnion(sa, sb);
+        union.SetUnion(sc, sb);
 
-        System.out.println("Difference");
+        System.out.println("\nDifference");
         dif.SetDifference(sa, sb);
+        dif.SetDifference(sc, sb);
 
-        System.out.println("Intersetion");
+        System.out.println("\nIntersetion");
         inter.SetIntersection(sa, sb);
+        inter.SetIntersection(sc, sb);
 
-        System.out.println("Membership");
-        System.out.println(member.SetMembership(0, sb));
-        System.out.println(member.SetMembership(1, sb));
-        System.out.println(member.SetMembership(2, sb));
+        System.out.println("\nMembership");
+        member.SetMembership(0, sb);
+        member.SetMembership(1, sb);
+        member.SetMembership(2, sc);
 
-        System.out.println("Complement");
+        System.out.println("\nComplement");
         comp.SetComplement(sa, sb);
+        comp.SetComplement(sa, sc);
     }
 }

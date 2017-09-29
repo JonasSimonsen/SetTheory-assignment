@@ -18,6 +18,11 @@ public class Complement {
     ArrayList<Comparable> c = new ArrayList();
     
     boolean bool = true;
+    
+    if(a.infinite || b.infinite) {
+        System.out.println("One of the sets was infinite!");
+        return;
+    }
 
         for (Integer bInt : b.getValues() ) {
             for (Integer aInt : a.getValues()) {

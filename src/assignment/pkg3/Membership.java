@@ -11,13 +11,18 @@ package assignment.pkg3;
  */
 public class Membership {
 
-    public boolean SetMembership(int a, Set<Integer> b) {
+    public void SetMembership(int a, Set<Integer> b) {
+
+        if (b.infinite) {
+            System.out.println("One of the sets was infinite!");
+            return;
+        }
 
         for (Integer integer : b.getValues()) {
             if (integer == a) {
-                return true;
+                System.out.println("True");
             }
         }
-        return false;
+        System.out.println("False");
     }
 }

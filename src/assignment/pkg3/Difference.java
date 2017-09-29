@@ -16,6 +16,11 @@ public class Difference {
     public void SetDifference(Set<Integer> a, Set<Integer> b) {
 
         ArrayList<Integer> c = new ArrayList();
+        
+        if(a.infinite || b.infinite) {
+        System.out.println("One of the sets was infinite!");
+        return;
+    }
 
         for (Integer aInt : a.getValues()) {
             boolean bool = true;

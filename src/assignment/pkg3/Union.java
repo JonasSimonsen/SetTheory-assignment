@@ -17,6 +17,11 @@ public class Union {
     public void SetUnion(Set<Integer> a, Set<Integer> b) {
 
     ArrayList<Comparable> c = new ArrayList();
+    
+    if(a.infinite || b.infinite) {
+        System.out.println("One of the sets was infinite!");
+        return;
+    }
 
         for (Integer aInt : a.getValues() ) {
             for (Integer bInt : b.getValues()) {
