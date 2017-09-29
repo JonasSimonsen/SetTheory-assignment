@@ -21,10 +21,6 @@ public class Set<E extends Comparable> {
     public Set(boolean infinite) {
         this.infinite = infinite;
     }
-    
-    public Set() {
-        values = (E[]) new Comparable[0];
-    }
 
     public E[] getValues() {
         return values;

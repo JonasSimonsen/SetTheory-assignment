@@ -15,16 +15,19 @@ public class Complement {
 
     public void SetComplement(Set<Integer> a, Set<Integer> b) {
 
-    ArrayList<Comparable> c = new ArrayList();
-    
-    boolean bool = true;
-    
-    if(a.infinite || b.infinite) {
-        System.out.println("One of the sets was infinite!");
-        return;
-    }
+        ArrayList<Comparable> c = new ArrayList();
 
-        for (Integer bInt : b.getValues() ) {
+        boolean bool = true;
+
+        //Check if one of the sets are infinite and breaks if is
+        if (a.infinite || b.infinite) {
+            System.out.println("One of the sets was infinite!");
+            return;
+        }
+
+        //Loops through both sets and if match is found, break, 
+        //and add all remaining values to temporary list
+        for (Integer bInt : b.getValues()) {
             for (Integer aInt : a.getValues()) {
                 if (aInt == bInt) {
                     bool = true;
@@ -36,6 +39,7 @@ public class Complement {
                 c.add(bInt);
             }
         }
+        //Prints temporary list
         System.out.println(c);
     }
 }

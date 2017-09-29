@@ -16,12 +16,15 @@ public class Difference {
     public void SetDifference(Set<Integer> a, Set<Integer> b) {
 
         ArrayList<Integer> c = new ArrayList();
-        
-        if(a.infinite || b.infinite) {
-        System.out.println("One of the sets was infinite!");
-        return;
-    }
 
+        //Check if one of the sets are infinite and breaks if is
+        if (a.infinite || b.infinite) {
+            System.out.println("One of the sets was infinite!");
+            return;
+        }
+
+        //Loop through all values of both sets, 
+        //and add to temporary list if values does not match
         for (Integer aInt : a.getValues()) {
             boolean bool = true;
             for (Integer bInt : b.getValues()) {
@@ -33,6 +36,7 @@ public class Difference {
                 c.add(aInt);
             }
         }
+        //Print temporary list
         System.out.println(c);
     }
 }

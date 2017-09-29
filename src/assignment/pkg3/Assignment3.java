@@ -5,8 +5,6 @@
  */
 package assignment.pkg3;
 
-import java.util.HashSet;
-
 /**
  *
  * @author jonassimonsen
@@ -26,29 +24,43 @@ public class Assignment3 {
 
         Integer[] a = {1, 2, 3, 5, 6, 7, 8, 10};
         Integer[] b = {1, 3, 4, 6, 8, 9, 10, 11};
+        Integer[] c = {1, 2, 3, 5, 6}; //subset of a
         Set<Integer> sa = new Set(a);
         Set<Integer> sb = new Set(b);
-        Set<Integer> sc = new Set(true);
-        
-        System.out.println("\nUnion");
-        union.SetUnion(sa, sb);
-        union.SetUnion(sc, sb);
+        Set<Integer> sc = new Set(c);
+        Set<Integer> sd = new Set(true);
+
+        System.out.println("Union");
+        union.SetUnion(sa, sb); // All numbers in a and b
+        union.SetUnion(sd, sb); // One set is infite
+        union.SetUnion(sa, sc); // One of the sets is subset of the other
+        union.SetUnion(sd, sd); // Both sets are infinite
+        union.SetUnion(sa, sa); // Sets are the same
 
         System.out.println("\nDifference");
-        dif.SetDifference(sa, sb);
-        dif.SetDifference(sc, sb);
+        dif.SetDifference(sa, sb); // Differences between a and b
+        dif.SetDifference(sd, sb); // One set is infite
+        dif.SetDifference(sa, sc); // One of the sets is subset of the other
+        dif.SetDifference(sd, sd); // Both sets are infinite
+        dif.SetDifference(sa, sa); // Sets are the same
 
         System.out.println("\nIntersetion");
-        inter.SetIntersection(sa, sb);
-        inter.SetIntersection(sc, sb);
+        inter.SetIntersection(sa, sb); // All numbers that appear in both a and b
+        inter.SetIntersection(sd, sb); // One set is infite
+        inter.SetIntersection(sa, sc); // One of the sets is subset of the other
+        inter.SetIntersection(sd, sd); // Both sets are infinite
+        inter.SetIntersection(sa, sa); // Sets are the same
 
         System.out.println("\nMembership");
-        member.SetMembership(0, sb);
-        member.SetMembership(1, sb);
-        member.SetMembership(2, sc);
+        member.SetMembership(0, sb); // 0 is not a member of b
+        member.SetMembership(1, sb); // 1 is a member of b
+        member.SetMembership(2, sd); // 2 the set is infinite
 
         System.out.println("\nComplement");
-        comp.SetComplement(sa, sb);
-        comp.SetComplement(sa, sc);
+        comp.SetComplement(sa, sb); // All remaining number is b 
+        comp.SetComplement(sa, sd); // One set is infite
+        comp.SetComplement(sa, sc); // One of the sets is subset of the other
+        comp.SetComplement(sd, sd); // Both sets are infinite
+        comp.SetComplement(sa, sa); // Sets are the same
     }
 }
