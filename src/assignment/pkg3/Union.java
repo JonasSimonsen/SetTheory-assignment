@@ -5,7 +5,8 @@
  */
 package assignment.pkg3;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -13,12 +14,21 @@ import java.util.HashSet;
  */
 public class Union {
 
-    public void SetUnion(HashSet<Integer> a, HashSet<Integer> b) {
+    public void SetUnion(Set<Integer> a, Set<Integer> b) {
 
-        HashSet<Integer> c = new HashSet<Integer>(a);
+    ArrayList<Comparable> c = new ArrayList();
 
-        c.addAll(b);
+        for (Integer aInt : a.getValues() ) {
+            for (Integer bInt : b.getValues()) {
+                if (!c.contains(bInt)) {
+                    c.add(bInt);
+                }
+                if (!c.contains(aInt)) {
+                    c.add(aInt); 
+                } 
+            }
+        }
+        Collections.sort(c);
         System.out.println(c);
-
     }
 }

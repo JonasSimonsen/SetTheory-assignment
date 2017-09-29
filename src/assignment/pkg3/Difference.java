@@ -5,25 +5,29 @@
  */
 package assignment.pkg3;
 
-import java.util.HashSet;
-
-
+import java.util.ArrayList;
 
 /**
  *
  * @author jonassimonsen
  */
 public class Difference {
-    
-    public void SetDifference (HashSet<Integer> a, HashSet<Integer> b) {
 
-        HashSet<Integer> c = new HashSet<Integer>(a);
+    public void SetDifference(Set<Integer> a, Set<Integer> b) {
 
-        c.removeAll(b);
+        ArrayList<Integer> c = new ArrayList();
+
+        for (Integer aInt : a.getValues()) {
+            boolean bool = true;
+            for (Integer bInt : b.getValues()) {
+                if (aInt == bInt) {
+                    bool = false;
+                }
+            }
+            if (bool) {
+                c.add(aInt);
+            }
+        }
         System.out.println(c);
-
     }
-    
-    
-    
 }

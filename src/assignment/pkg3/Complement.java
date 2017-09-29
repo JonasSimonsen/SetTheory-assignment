@@ -5,7 +5,7 @@
  */
 package assignment.pkg3;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,24 +13,24 @@ import java.util.HashSet;
  */
 public class Complement {
 
-    public void SetComplement(HashSet<Integer> a, HashSet<Integer> b) {
+    public void SetComplement(Set<Integer> a, Set<Integer> b) {
 
-        HashSet<Integer> c = new HashSet<>();
+    ArrayList<Comparable> c = new ArrayList();
+    
+    boolean bool = true;
 
-// Bruger for loop
-
-//        for (Integer integer : a) {
-//            if (b.contains(integer)) {
-//                b.remove(integer);
-//            }
-//        }
-//        System.out.println(b);
-
-// Bruger indbyggede funktioner
-
-        c.addAll(a);
-        c.removeAll(b);
-
+        for (Integer bInt : b.getValues() ) {
+            for (Integer aInt : a.getValues()) {
+                if (aInt == bInt) {
+                    bool = true;
+                    break;
+                }
+                bool = false;
+            }
+            if (!bool) {
+                c.add(bInt);
+            }
+        }
         System.out.println(c);
     }
 }

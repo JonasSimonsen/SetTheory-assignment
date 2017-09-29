@@ -5,7 +5,7 @@
  */
 package assignment.pkg3;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,13 +13,15 @@ import java.util.HashSet;
  */
 public class Intersection {
 
-    public void SetIntersection(HashSet<Integer> a, HashSet<Integer> b) {
+    public void SetIntersection(Set<Integer> a, Set<Integer> b) {
 
-        HashSet<Integer> c = new HashSet<Integer>();
+        ArrayList<Comparable> c = new ArrayList();
 
-        for (Integer integer : a) {
-            if (b.contains(integer)) {
-                c.add(integer);
+        for (Integer aInt : a.getValues() ) {
+            for (Integer bInt : b.getValues()) {
+                if (aInt == bInt) {
+                    c.add(aInt);
+                }
             }
         }
         System.out.println(c);

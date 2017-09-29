@@ -5,16 +5,19 @@
  */
 package assignment.pkg3;
 
-import java.util.HashSet;
-
 /**
  *
  * @author jonassimonsen
  */
 public class Membership {
 
-    public boolean SetMembership(int a, HashSet<Integer> b) {
+    public boolean SetMembership(int a, Set<Integer> b) {
 
-        return b.contains(a);
+        for (Integer integer : b.getValues()) {
+            if (integer == a) {
+                return true;
+            }
+        }
+        return false;
     }
 }
