@@ -13,6 +13,12 @@ import java.util.ArrayList;
  */
 public class Intersection {
 
+    /**
+     * Find intersection of two sets
+     *
+     * @param a first set
+     * @param b second set
+     */
     public void SetIntersection(Set<Integer> a, Set<Integer> b) {
 
         ArrayList<Comparable> c = new ArrayList();

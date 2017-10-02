@@ -14,6 +14,12 @@ import java.util.Collections;
  */
 public class Union {
 
+    /**
+     * Get the union of two sets
+     *
+     * @param a first set
+     * @param b second set
+     */
     public void SetUnion(Set<Integer> a, Set<Integer> b) {
 
         ArrayList<Comparable> c = new ArrayList();

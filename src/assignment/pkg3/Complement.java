@@ -13,6 +13,12 @@ import java.util.ArrayList;
  */
 public class Complement {
 
+    /**
+     * Finds everything that is not in set a
+     *
+     * @param a first set
+     * @param b second set
+     */
     public void SetComplement(Set<Integer> a, Set<Integer> b) {
 
         ArrayList<Comparable> c = new ArrayList();

@@ -13,6 +13,12 @@ import java.util.ArrayList;
  */
 public class Difference {
 
+    /**
+     * Find all differences in set b that does not occur in set a
+     *
+     * @param a first set
+     * @param b second set
+     */
     public void SetDifference(Set<Integer> a, Set<Integer> b) {
 
         ArrayList<Integer> c = new ArrayList();

@@ -11,6 +11,12 @@ package assignment.pkg3;
  */
 public class Membership {
 
+    /**
+     * Check if int is a member of set
+     *
+     * @param a int to check
+     * @param b set to look in
+     */
     public void SetMembership(int a, Set<Integer> b) {
 
         //Check if the set is infinite, and breaks if it is
